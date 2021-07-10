@@ -1,0 +1,22 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es2020",
+		"outDir": "dist/",
+		"allowJs": true,
+		"moduleResolution": "node",
+    	"esModuleInterop": false,
+		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"baseUrl": "./",
+		"paths": {
+			"@cpu*": ["./src/cpu/*", "./dist/cpu/*"],
+			"@os*": ["./src/os/*", "./dist/os/*"]
+		},
+		"incremental": true,
+		"sourceMap": true
+	},
+	"include": ["./src/**/*"]
+}

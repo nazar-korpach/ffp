@@ -1,0 +1,111 @@
+{
+	"env": {
+		"node": true,
+		"es6": true
+	},
+	"extends": [
+		"plugin:@typescript-eslint/recommended",
+		"plugin:import/errors",
+		"plugin:import/warnings",
+		"plugin:import/typescript"
+	],
+	"globals": {
+		"Atomics": "readonly",
+		"SharedArrayBuffer": "readonly"
+	},
+	"settings": {
+		"import/resolver": {
+			"typescript": {}
+		}
+	},
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": 2021,
+		"sourceType": "module",
+		"project": "./tsconfig.json"
+	},
+	"plugins": [
+		"@typescript-eslint"
+	],
+	"rules": {
+		"semi": [
+			"error",
+			"always"
+		],
+		"indent": [
+			"error",
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"no-multi-spaces": "error",
+		"no-trailing-spaces": "error",
+		"no-irregular-whitespace": "error",
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 1
+			}
+		],
+		"curly": [
+			"warn",
+			"all"
+		],
+		"brace-style": [
+			"warn",
+			"1tbs",
+			{
+				"allowSingleLine": false
+			}
+		],
+		"no-duplicate-imports": "error",
+		"@typescript-eslint/camelcase": 0,
+		"@typescript-eslint/no-explicit-any": "warn",
+		"@typescript-eslint/semi": "error",
+		"@typescript-eslint/no-non-null-assertion": 0,
+		"@typescript-eslint/no-unused-vars": "off",
+		"@typescript-eslint/no-unused-vars-experimental": [
+			"error",
+			{
+				"ignoreArgsIfArgsAfterAreUsed": true
+			}
+		],
+		"sort-imports": [
+			"warn",
+			{
+				"ignoreDeclarationSort": true
+			}
+		],
+		"import/order": [
+			"warn",
+			{
+				"pathGroups": [
+					{
+						"pattern": "@srv/**",
+						"group": "external",
+						"position": "after"
+					}
+				],
+				"groups": [
+					"builtin",
+					"external",
+					"parent",
+					"sibling",
+					"index",
+					"object"
+				],
+				"alphabetize": {
+					"order": "asc"
+				}
+			}
+		],
+		"import/default": "off",
+		"import/no-named-as-default-member": "off",
+		"import/namespace": "off",
+		"object-curly-spacing": [
+			"error",
+			"never"
+		]
+	}
+}

@@ -1,0 +1,35 @@
+{
+  "name": "ffp",
+  "version": "1.0.0",
+  "description": "for fun project",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+    "lint:fix": "eslint --fix ./src/**/*.ts",
+    "test": "jest",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazar-korpach/ffp.git"
+  },
+  "author": "Nazar Korpach",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nazar-korpach/ffp/issues"
+  },
+  "homepage": "https://github.com/nazar-korpach/ffp#readme",
+  "dependencies": {
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.6.0",
+    "@typescript-eslint/parser": "^4.6.0",
+    "eslint": "^7.17.0",
+    "eslint-import-resolver-typescript": "^2.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^5.0.0"
+  }
+}
