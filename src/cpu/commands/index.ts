@@ -4,3 +4,4 @@ export * from './jmp';
 export * from './cmp';
 export * from './mov';
 export * from './sub';
+export * from './mul';
