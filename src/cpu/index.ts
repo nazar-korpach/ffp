@@ -1,35 +1,42 @@
+import {OS} from '../os';
 import {Command, Commands, ICommand, commandIndexes} from './types';
 import {loadCommandTable} from './utils';
-import {EventEmitter} from 'events';
 
 const RAM_SIZE = 1024 * 1024; // 1 MB
 
-export class CPU extends EventEmitter{
+export class CPU{
 	public memory: Buffer;
 
 	public IPPointer: number;
 	public finished: boolean;
 
+	public os: OS; // TODO: make private
+
 	private CommandTable: { [cmd in Commands]?: Command};
 
 	constructor() {
-		super()
-
 		this.memory = Buffer.alloc(RAM_SIZE);
 		this.finished = false;
 		this.IPPointer = 0;
-		this.CommandTable = loadCommandTable();	
+		this.CommandTable = loadCommandTable();
+	}
+
+	setOS(os: OS): void {
+		this.os = os;
 	}
 
 	public startExecution(): void {
-		console.log('source', this.memory.slice(0, 65).toString('hex'));
+		if(!this.os) { // TODO: remove
+			throw new Error('Set OS pls');
+		}
+
+		console.log('source', this.memory.slice(0, 34).toString('hex'));
 
 		while(!this.finished) {
 			const cmd = this.readCommand(this.IPPointer);
 			this.IPPointer += this.executeCommand(cmd);
 		}
 
-		console.log('result', this.memory.readInt32LE(50));
 	}
 
 	private readCommand(pointer: number): ICommand { // TODO add validation

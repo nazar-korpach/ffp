@@ -9,7 +9,10 @@ export enum Commands {
 	jmp = 6,
 	end = 7,
 	cpm = 8,
-	set = 9
+	set = 9,
+	adr = 10,
+	get = 11,
+	sys = 12
 }
 
 export const commandIndexes = {
@@ -21,7 +24,10 @@ export const commandIndexes = {
 	6: 'jmp',
 	7: 'end',
 	8: 'cpm',
-	9: 'set'
+	9: 'set',
+	10: 'adr',
+	11: 'get',
+	12: 'sys'
 }
 
 export interface ICommand {

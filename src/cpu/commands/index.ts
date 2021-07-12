@@ -5,3 +5,5 @@ export * from './cmp';
 export * from './mov';
 export * from './sub';
 export * from './mul';
+export * from './sys';
+export * from './set';

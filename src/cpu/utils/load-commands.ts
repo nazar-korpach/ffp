@@ -8,6 +8,6 @@ export function loadCommandTable(): { [command in Commands]?: Command} {
 	cmds.forEach((cmd) => {
 		indexToCmdTable[ cmd.command ] = cmd;
 	})
-	
+
 	return indexToCmdTable;
 }
